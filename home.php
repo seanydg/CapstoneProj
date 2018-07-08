@@ -8,6 +8,8 @@
 
  <!-- Stylesheets -->
 <link rel="stylesheet" type="text/css" href="assets/css/loginform.css">
+<link rel="stylesheet" type="text/css" href="assets/css/navbar.css">
+
 Welcome <?php echo $_GET("name"); ?><br>
 </head>
 

@@ -8,7 +8,6 @@
 
  <!-- Stylesheets -->
 <link rel="stylesheet" type="text/css" href="assets/css/loginform.css">
-<h1>Business Platform</h1>
 <!--Javascript -->
 <!--Firebase Script-->
 <!-- Firebase App is always required and must be first -->
@@ -20,27 +19,21 @@
 <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-messaging.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-functions.js"></script>
-
+<h1>Business Platform</h1>
 </head>
-
 <body>
-	<!--General Login Form 
-	<form action="home.php" method="get">
-		Username: <input type="text" name="name"><br>
-		Password: <input type="Password" name="password"><br>
-		<input type="submit">
-	</form>
-	<-->
 	<div class="container">
 		<!--Input Form -->
-		<input id="txtUser" type="Email" placeholder="Username">
+		<input id="txtName" type="text" placeholder="Name">
+		<input id="txtEmail" type="text" placeholder="Email">
 		<input id="txtPass" type="Password" placeholder="Password">
-
+		<input id="txtCName" type="text" placeholder="Company Name">
+		<input id="txtConDetials" type="text" placeholder="Contact No">
+		<input id="txtLicenseNo" type="text" placeholder="License No">
 		<!-- Button Form -->
-		<button id="btnLogin" class="btn btn-action">Log In</button>
-		<a href="reg.php"><button>Register with Us</button>
+		<button id="btnSignUp" type="submit" class="btn btn-action">Register With Us</button>
 	</div>
-	<script src="assets/js/app.js"></script>
-
+		<script src="assets/js/app.js"></script>
+ 
 </body>
 </html>

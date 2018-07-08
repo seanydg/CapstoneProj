@@ -1,5 +1,4 @@
-(function)() {
-	<script>
+(function() {
   	// Initialize Firebase
   	const config = {
     	apiKey: "AIzaSyCW-PgIpCK1GX_3TyFJyrYDnUTPBYj9X_M",
@@ -9,32 +8,39 @@
     	storageBucket: "odd-jobs-eb72a.appspot.com",
     	messagingSenderId: "836400374523"
   	};
+
   	firebase.initializeApp(config);
 
-  	const txtUser = document.getElementByID("txtUser");
+    //Get Elements
+  	const txtEmail = document.getElementByID("txtEmail");
   	const txtPass = document.getElementByID("txtPass");
   	const btnLogin = document.getElementByID("btnLogin");
+    const btnSignUp = document.getElementByID("btnSignUp");
 
   	//Add Login Event
   	btnLogin.addEventListner('click', e => {
   		//Get Email and Password
-  		const email = txtUser.value;
-  		const pass = txtPass.value;
+  		const email = txtEmail.value;
+  		const password = txtPass.value;
   		const auth = firebase.auth();
 
   		//Sign In
-  		auth.signInWithEmailAndPassword(email, pass);
+  		firebase.auth().signInWithEmailAndPassword(email, password);
   	});
-  	//Add a RealTime Listner
-  	firebase.auth().onAuthStateChanged(firebaseUser => {
-  		if(firebaseUser) {
-  			console.log(firebaseUser);
-  		}
-  		else {
-  			console.log('not logged in');
-  		}
 
-  	})
-  }();
-  		}
+    //Add Sign Up Event
+    btnSignUp.addEventListener('click', e => {
+      const email = txtEmail.value;
+      const password = txtPass.value;
+      const auth = firebase.auth();
+
+      //Sign Up
+      const promise = firebase.auth().createUserWithEmailAndPassword(email, password);
+      promise.catch(e => console.log(e.message));
+    });
+
+
+    
+  });
+
 
